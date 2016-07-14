@@ -1,0 +1,1214 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="./d3.v3.min.js" charset="utf-8"></script>
+<style>
+.area {
+    fill: plum;
+    stroke-width: 0;
+	opacity: 0.5;
+}
+
+#introduction {
+  position: relative;
+  width: 900px;
+  margin-bottom = 40px;
+    margin-left: 14px;
+
+}
+#pad {
+  position: relative;
+  width: 950px;
+  height: 20px;
+}
+#pad2 {
+  position: relative;
+  width: 950px;
+  height: 10px;
+}
+
+#pad3 {
+  position: relative;
+  width: 950px;
+  height: 20px;
+}
+#pad4 {
+  position: relative;
+  width: 950px;
+  height: 20px;
+}
+#introduction h4 {
+  margin-top:3em;
+  margin-bottom: 1.5em;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: #474747;
+  text-indent: 3px;
+  margin-left: 14px;
+}
+#introduction p {
+  margin-top:0.5em;
+  margin-bottom: 0.5em;
+  margin-left: 4px;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-size: 15px;
+  color: Black;
+  text-align: justify;
+  line-height:18px;
+}
+#lancement {
+  position: relative;
+  width: 1300px;
+  margin-top= 40px;
+  margin-bottom = 10px;
+}
+#lancement h1 {
+	padding: 0px 0px 30px 0px;
+}
+#lancement h4 {
+  margin-top:3em;
+  margin-bottom: 1.5em;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: #474747;
+  text-indent: 3px;
+  margin-left: 14px;
+}
+#lancement p {
+  margin-top:1em;
+  margin-bottom: 0.5em;
+  margin-left: 14px;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-size: 15px;
+  color: Black;
+  text-align: justify;
+  line-height:18px;
+}
+.axis path,
+.axis line {
+	fill: none;
+	stroke: black;
+	stroke-width: 1;
+	shape-rendering: crispEdges;
+}
+.axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+}
+
+#zone1 {
+  position: relative;
+  width: 900px;
+  height: 60px;
+}
+#zone1 h4 {
+  margin-top:3em;
+  margin-bottom: 1.5em;
+  margin-left: 14px;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: #474747;
+  text-indent: 3px;
+}
+#zone1 p {
+  margin-top:0.5em;
+  margin-bottom: 0.5em;
+  margin-left: 14px;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-size: 15px;
+  color: Black;
+  text-align: justify;
+  line-height:18px;
+}
+#zone12 {
+  position: relative;
+  width: 900px;
+  height: 30px;
+    margin-left: 14px;
+}
+#zone12 h4 {
+  margin-top:1em;
+  margin-bottom: 2em;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: #474747;
+  text-indent: 3px;
+}
+#zone12 p {
+  margin-top:0.5em;
+  margin-bottom: 0.5em;
+  margin-left: 14px;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-size: 15px;
+  color: Black;
+  text-align: justify;
+  line-height:18px;
+}
+svg12{
+  opacity: 1;
+  width: 900px;
+  height: 20px;
+    margin-left: 14px;
+} 
+#zone13 {
+  position: relative;
+  width: 900px;
+  height: 30px;
+}
+#viz {
+  position: relative;
+  margin-top = 20px;
+  width: 1160px;
+  height: 400px;
+    margin-left: 14px;
+}
+#zone2 {
+  position: relative;
+  width: 1300px;
+  height: 260px;
+}
+#zone2 h4 {
+  margin-top:3em;
+  margin-bottom: 1.5em;
+  margin-left: 14px;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: #474747;
+  text-indent: 3px;
+}
+#zone2 p,text {
+  margin-top:0.5em;
+  margin-bottom: 0.5em;
+  margin-left: 14px;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-size: 15px;
+  color: Black;
+  text-align: justify;
+  line-height:18px;
+}
+
+#zone3 {
+  position: relative;
+  width: 1300px;
+  height: 800px;
+}
+#zone3 h4 {
+  margin-top:3em;
+  margin-bottom: 1.5em;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-size: 15px;
+  font-weight: bold;
+  color: #474747;
+  text-indent: 14px;
+}
+#zone3 p,text {
+  margin-top:0.5em;
+  margin-bottom: 0.5em;
+  margin-left: 14px;
+  font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif;
+  font-size: 15px;
+  color: Black;
+  text-align: justify;
+  line-height:18px;
+}
+</style>
+
+</head>
+<div id="introduction"></div>
+<div id="pad"></div>
+<div id="lancement">
+<h1 align="center"> LA REGRESSION LINEAIRE  </h1>
+
+<p><br /><br />La regression linéiare est le modèle le plus basique des regresssions. Il est présenté ici dans un but pédagogique.
+</p>
+
+<p></p>
+<p></p>
+</div>
+<div id="pad2"><br /><br /><br /><br /></div>
+<div id="zone1">	
+	<div id="zone12"></div>
+	<div id="zone13"></div>
+</div>
+<div id="viz"></div>
+<div id="pad3"><br /><br /></div>
+<div id="zone2"></div>
+<div id="pad4"></div>
+<div id="zone3"></div>
+<body>
+   <script charset ="utf-8" type="text/javascript">
+	
+	var svg0 = d3.select("#introduction").append("svg0")
+    .attr("width", 900)
+    .attr("height", 70)
+	.style("border", 1)
+	.attr("class", "graph-svg-component");
+	   
+	var svg1 = d3.select("#zone12").append("svg1")
+    .attr("width", 500)
+    .attr("height", 30)
+	.style("border", 1)
+	.attr("class", "graph-svg-component");
+	
+	var svg12 = d3.select("#zone13").append("svg12")
+    .attr("width", 1160)
+    .attr("height", 30)
+	.style("border", 1)
+	.attr("class", "graph-svg-component");
+	
+	var svg = d3.select("#viz").append("svg")
+    .attr("width", 1050)
+    .attr("height", 400)
+	.style("border", 1)
+	.attr("class", "graph-svg-component");
+	   
+	var svg2 = d3.select("#lancement").append("svg2")
+    .attr("width", 900)
+    .attr("height", 650)
+	.style("border", 1)
+	.attr("class", "graph-svg-component");
+	
+
+	
+   	var numPoints = 100; // default selection is 100 points
+	var bubbleChart = [];	
+	var Yn = [];
+	var Xn = [[]];
+	var P = [];		
+	var slope = 0;
+	var	lineoffset = 0;
+	var Etat_droite = "Choix_en_cours";
+	var Etat_points = "Choix_en_cours";
+	var valide = "valide";
+	var test = 0;
+	var Ok_pour_perceptron = "KO";
+	var W = [[]];
+	W[0] =  [0,0,0,0];
+	var slopeW = 0;
+	var	lineoffsetW = 0;
+	W[0] =  [0, 0, 0,0];
+	var	IT = 0;
+	var	Xb = 0;
+	var	Yb = 0;
+	var Ynbad = 0;
+	var	Yn_w = [];
+	var	Wcost = 0;
+	var Wcostmin = 1000;
+	var TabWcostmin = [];
+	var tabl1=[];
+	var paddingy = 27;
+	var paddingx = 27;
+	var hx = 300;
+	var hy = 300;
+	var Decalage_right_courbeCout = 550;
+	var formatAsPercentage = d3.format(".1%");
+	var w = 300;
+	var Costdataset = [];
+	var MaxIT = 1000;
+	var firsttime = "OK";
+	var j=0;
+	var Point_x = 0;
+	var Point_y = 0;
+	var blackpoint_ordonnee = "KO";
+	var blackpoint_abscisse  = "KO";
+	
+	
+	function Math_sign(ValeurASigner){
+	
+		if (ValeurASigner == 0){
+			
+			return 0;
+			
+			}
+		else{
+			if(ValeurASigner > 0){
+			return 1;
+			}
+			else{
+			return -1;
+			}
+		
+		}
+	
+	}
+
+	function affichage_cout(){
+		
+		//ici initialiser les variables pour afficher données et axes
+		Costdataset = [];
+		d3.selectAll("g").remove();
+		d3.select("#p5").remove();
+			
+		for (var i = 0; i < W.length; i++) { 
+			Costdataset.push([W[i][3]*200,i]);// la valeur du cout est multiplie par 200 car elle correspondra ) l'affichage à un nombre de pixels qui doit être une quantité visible, l'echelle verticale est de 0 à 80%
+			//d3.select("svg2").append("p").text("Costdataset[0] = "+Costdataset[i][0]+"Costdataset[1] = "+i);
+		}
+				
+		var xScale = d3.scale.linear()
+				.domain([0, d3.max(Costdataset, function(d) { return (d[1]); })])
+				.range([0, d3.max(Costdataset, function(d) { return (d[1])*1.5; })]);
+
+		var yScale = d3.scale.linear()
+				.domain([0, 0.8])
+				.range([hy - paddingy, paddingy]);
+				
+		var xAxis = d3.svg.axis()
+                .scale(xScale)
+                .orient("bottom")
+				.ticks(3);
+				  
+		var yAxis = d3.svg.axis()
+                .scale(yScale)
+                .orient("left")
+				.tickFormat(formatAsPercentage);
+				  
+		svg.append("g")
+				.attr("class", "axis")  // Assigne la classe "axis"
+				.attr("transform", "translate("+Decalage_right_courbeCout + "," + (hx - paddingx) + ")")
+				.call(xAxis);
+				
+		svg.append("text")      // text label for the x axis
+			.attr("x", Decalage_right_courbeCout + 50 )
+			.attr("y", hx+15 )
+			//.style("text-anchor", "middle")
+			.text("Itérations");
+					
+		svg.append("g")
+			.attr("class", "axis")
+			.attr("transform", "translate("+ Decalage_right_courbeCout + ",0)")
+			.call(yAxis);
+				
+		svg.append("text")
+			.attr("transform", "rotate(-90)")
+			.attr("y",Decalage_right_courbeCout - (3*paddingx))
+			.attr("x",0- hx/2-paddingy)
+			.attr("dy", "1em")
+			.text("Taux d'erreur");
+				
+ 				  
+		var lineFunction = d3.svg.line()
+                          .x(function(d) { return (d[1]); })
+                          .y(function(d) { return (hx-paddingx-d[0]); })
+                          .interpolate("linear");		  
+		
+		svg.append("path")
+			.attr("id", "costpath")
+			.attr("d", lineFunction(Costdataset))
+			.attr("transform", "translate("+ Decalage_right_courbeCout + ",0)")
+            .attr("stroke", "lightblue")
+			.attr("opacity", 1)
+            .attr("stroke-width", 1)
+            .attr("fill", "none");		  
+			
+		d3.select("svg").append("text").attr("fill", "red").attr("id","p5").text("Taux d'erreur minimum: "+ Wcostmin.toFixed(5)).attr("font-size", "15px").attr("transform", "translate("+ (Decalage_right_courbeCout+150) + ","+(hx +100)+")");
+
+			
+	}
+	
+	function Perceptron_Pasapas() {		
+		if (IT == 0){d3.select("#btn_perpOS").remove();} //on supprime le bouton de choix Perceptron One Shot
+		
+		drawperceptronline(W,"darkgreen", 1);
+		//d3.select("svg2").append("p").text( "Pour IT = " +IT+ "  " +"les coordonnees de W sont  "+W[IT][0] + "    "+W[IT][1] + "  "+W[IT][2]);		
+		//for (var i = 0; i < numPoints; i++) {d3.select("svg2").append("p").text( "les labels des points sont "+Xn[i][2]);}
+		LabelisePoints();
+		Wcost = CalculateAddnewCost(Yn_w);
+		affichage_cout();
+		if(Wcost == 0){
+			d3.select("svg0").append("button")
+				.attr("id","btn0")
+				.attr("value","PLAY")
+				.attr("margin-top","40px")
+				.text("Lancer le Perceptron")
+				.on("click", Lancer_Perceptron);
+			
+			var slope_finale = -W[IT][1]/W[IT][2];
+			var lineOffsetfinal = -W[IT][0]/W[IT][2];
+			slope_finale = slope_finale.toFixed(2);
+			lineOffsetfinal = lineOffsetfinal.toFixed(2);
+			drawperceptronline(W,"orange",4, 5);
+			d3.select("svg2").append("p").attr("id", "p_fin1").text( "Le perceptron a trouvé une solution pour classer les points. ").style("color","red");
+			d3.select("#btn_perpIT").remove();	
+			d3.select("svg2").append("p").attr("id", "p_fin2").text("Fin de l'apprentissage - La droite identifiée est en orange sur le graphique").style("color","red");	
+			d3.select("#p2").remove(); //Suppression paragraphe - Phase apprentissage
+			Prédiction();
+			}
+			
+		//d3.select("svg2").append("p").text( "Yn_w calculé " +Yn_w);
+		tabl1 = FindBadPoint(Yn_w);
+		//d3.select("svg2").append("p").text( "test Xb " +Xb+ "  " +"test Yb "+Yb);	
+		Xb = tabl1[0];
+		Yb = tabl1[1];
+		Ynbad = tabl1[2];
+		BadPointShow(Xb,Yb);
+		CalculateAddnewW(Xb,Yb,Ynbad);
+		Yn_w = [];
+		IT = IT + 1;
+		if(firsttime == "OK"){
+			d3.select("svg12").append("button")
+				.style("margin-left","8px")
+				.attr("id","btn6")
+				.text("Relancer le Perceptron")
+				.on("click", Lancer_Perceptron);
+			firsttime = "KO";
+		}
+			
+	}
+	
+	function Wo_init(){
+		index = getRandomInt(1, numPoints) -1;
+		W[0][0] = 20000;		
+		W[0][1] = Xn[index][0] *  Xn[index][2];		
+		W[0][2] = Xn[index][1] *  Xn[index][2];	
+	}
+	
+	function LabelisePoints(){	
+		for (var i = 0; i < numPoints; i++) {Yn_w[i]  = Math_sign((W[IT][0]*1+(W[IT][1]*(Xn[i][0]-200))+(W[IT][2]*(Xn[i][1]-200))));
+			//on pose Xo egal à 1,les -200 correspondent au changement de reperes, les calcul sont dans le repère dont 0 est l'origine, au milieu du carré. sur le graphique le carré a pour origine sont coin en haut à gauche
+		}		
+	}
+	
+	function CalculateAddnewCost(Yn_w){	
+		Wcost = 0;
+		for (var i = 0; i < numPoints; i++) {
+			if ((Yn_w[i] * Xn[i][2]) < 0){Wcost = Wcost + 1;} 
+		}
+		Wcost = Wcost / numPoints;
+		W[IT][3] = Wcost;
+		//d3.select("svg2").append("p").text("Pour IT = " + IT + " Le taux d'erreur est: " +Wcost);	
+		
+		if (Wcost < Wcostmin){		
+			Wcostmin = Wcost;
+			TabWcostmin = [W[IT][0],W[IT][1],W[IT][2]];
+			d3.select("#p5").text("Taux d'erreur minimum: " + Wcostmin.toFixed(2) );
+		}
+				
+		return Wcost;
+	}
+	
+
+	
+	function CalculateAddnewW(Xb,Yb,Ynbad){
+		var W0 = W[IT][0] + (400* Ynbad);	// pour adaptation aux coordonnées non normalisées des points et graphique de 500 par 500	
+		var W1 = W[IT][1] + ((Xb-200) * Ynbad);		
+		var W2 = W[IT][2] + ((Yb-200) * Ynbad);
+		//d3.select("svg2").append("p").text( "Ynbad du badpoint: "+Ynbad);		
+		//d3.select("svg2").append("p").text( "Les anciennes coord de W sont: Wo = " +W[IT][0]+ "  " +"W1 =  "+W[IT][1]+"W2 =  "+W[IT][2]);	
+		//d3.select("svg2").append("p").text( "Les nouvelles coord de W sont: Wo = " +W0+ "  " +"W1 =  "+W1+"W2 =  "+W2);	
+		W.push([W0,W1,W2,0]);
+	}
+	
+	function RL_Oneshot() {				
+		d3.select("#btn_perpIT").remove();		
+		
+		for(var i=0;i<MaxIT;i++){
+			IT = i;
+			drawperceptronline(W,"darkgreen", 0.5);
+			LabelisePoints();
+			Wcost = CalculateAddnewCost(Yn_w);
+			affichage_cout();
+			if(Wcost == 0){
+				d3.select("svg0").append("button")
+					.attr("id","btn0")
+					.attr("value","PLAY")
+					.text("Relancer le Perceptron")
+					.on("click", Lancer_Perceptron);			
+				var slope_finale = -W[IT][1]/W[IT][2];
+				var lineOffsetfinal = -W[IT][0]/W[IT][2];
+				slope_finale = slope_finale.toFixed(2);
+				lineOffsetfinal = lineOffsetfinal.toFixed(2);
+				drawperceptronline(W,"orange",4, 5);
+				d3.select("svg2").append("p").attr("id","p_fin1").text( "Le perceptron a trouvé une solution pour classer les points. C'est la droite de pente -"+slope_finale+" et d'offset Yo = "+ lineOffsetfinal).style("color","red");
+				d3.select("svg2").append("p").attr("id","p_fin2").text("Fin de l'apprentissage - La droite identifiée est en orange sur le graphique").style("color","red");	
+				d3.select("#p2").remove(); //Suppression paragraphe - Phase apprentissage
+				d3.select("#btn_perpOS").remove();
+				Prédiction();
+			}
+				
+			tabl1 = FindBadPoint(Yn_w);		
+			Xb = tabl1[0];
+			Yb = tabl1[1];
+			Ynbad = tabl1[2];
+			CalculateAddnewW(Xb,Yb,Ynbad);
+			Yn_w = [];
+			if(IT == MaxIT-1){				
+				d3.select("svg2").append("p").text( "Le perceptron a effectué "+(IT+1)+" itérations , la meilleure solution est la droite affichée en orange , elle est associée à un taux d'erreur de: "+Wcostmin.toFixed(5));
+				d3.select("#p2").remove(); //Suppression paragraphe - Phase apprentissage
+				//d3.select("svg2").append("p").text("la valeut de TabWcostmin[0][1]  est:  "+ TabWcostmin[0][1] +" et celle de est W[IT_int][2]"+ W_int[IT_int][2]);	
+				drawperceptronline_finalErrorRate(TabWcostmin,"orange",4, 5); // il faut ajouter un argument dans cette fonction pour le cas ou le W choisi n'est identifiable par l'IT en cours comme ici où on revient dans le passé
+				d3.select("#p5").text("Taux d'erreur minimum: " + Wcostmin.toFixed(5) );
+				d3.select("svg0").append("button")
+					.attr("id","btn0")
+					.attr("value","PLAY")
+					.text("Relancer le Perceptron")
+					.on("click", Lancer_Perceptron);	
+				d3.select("#btn_perpOS").remove();
+				d3.select("#btn_perpOS").remove();
+				Prédiction();
+			}
+		
+		}
+	}
+	
+	function lineAdjustToSVG(slopeW, lineoffsetW){
+
+		var tabl = [];
+		var x0 = -200;
+		var y0 = -200;
+		var x1 = 0;
+		var y1 = 0;
+		var x2 = 0;
+		var y2 = 0;
+		var x3 = 0;
+		var y3 = 0;
+
+
+		
+		x1 = -200;
+		y1 = x1*slopeW + lineoffsetW;
+
+		if(y1<-200){
+			y1 = -200;
+			x1 = (y1-lineoffsetW)/slopeW;
+
+			if(slopeW >= 0){				
+				if(x1 <= 200){
+					y2 = 200;
+					x2 = (y2-lineoffsetW)/slopeW;
+					if (x2 <= 200){					
+						x3 = 200;
+						y3 = 200;
+					}
+					else{ //x2 > 200
+						x2 = 200;
+						y2 = x2*slopeW + lineoffsetW;
+						x3 = 200;
+						y3 = 200;							
+					}
+				}
+				else{ //x1 > 200
+					// la droite ne passe pas dans le cadre
+					//relancer la fonction par un break dans ce cas
+					x0 = 200;
+					y0 = 200;
+					x1 = -200;
+					y1 = -200;
+					x2 = -200;
+					y2 = -200;
+					x3 = -200;
+					y3 = -200;				
+				}
+				
+			}
+			else{
+				// la droite ne passe pas dans le cadre
+					
+				//relancer la fonction par un break dans ce cas
+				x0 = 200;
+				y0 = 200;				
+					x1 = -200;
+					y1 = -200;
+					x2 = -200;
+					y2 = -200;
+					x3 = -200;
+					y3 = -200;
+				}							
+		}
+		if((y1>-200)&&(y1<200)){
+			if(slopeW >= 0){
+				y2 = 200;
+				x2 = (y2-lineoffsetW)/slopeW;
+				if (x2 <= 200){
+					x3 = 200;
+					y3 = 200;
+					
+				}
+				else{// x2 > 200
+					x2 = 200;
+					y2 = x2*slopeW + lineoffsetW;
+					x3 = 200;
+					y3 = 200;
+									
+				}
+			}
+			else{
+				y2 = -200;
+				x2 = (y2-lineoffsetW)/slopeW;
+				if (x2 <= 200){
+					x3 = 200;
+					y3 = -200;
+					
+				}
+				else{//x2>200
+					x2 = 200;
+					y2 = x2*slopeW + lineoffsetW;
+					x3 = 200;
+					y3 = -200;
+									
+				}
+			}				
+		}		
+
+		if(y1>200){
+			y1 = 200;
+			x1 = (y1-lineoffsetW)/slopeW;				
+			x0 = -200;
+			y0 = 200;
+			if(slopeW >= 0){
+				// la droite ne passe pas dans le cadre
+				x0 = 200;
+				y0 = 200;
+				y1 = 200;
+				x1 = 200;
+				x2 = 200;
+				y2 = 200;
+				x3 = 200;
+				y3 = 200;	
+				//relancer la fonction par un break dans ce cas				
+			}
+			else{ // pente negative
+				if (x1 <= 200){
+					x2 = 200;
+					y2 = x2*slopeW + lineoffsetW;
+					if (y2 <=-200){
+						y2 = -200;
+						x2 = (y2-lineoffsetW)/slopeW;
+						x3 = 200;
+						y3 = -200;
+						
+					}
+					else{//y2>-200
+						x3 = 200;
+						y3 = -200;		
+											
+					}
+				}
+				else{ //x1 > 200
+					x0 = 200;
+					y0 = 200;
+					y1 = 200;
+					x1 = 200;
+					x2 = 200;
+					y2 = 200;
+					x3 = 200;
+					y3 = 200;								
+				}
+			}		
+		}
+		
+		
+		tabl[0] = x0;
+		tabl[1] = y0;		
+		tabl[2] = x1;
+		tabl[3] = y1;
+		tabl[4] = x2;
+		tabl[5] = y2;
+		tabl[6] = x3;
+		tabl[7] = y3;
+
+		
+		return tabl;
+	}
+	function drawperceptronline_finalErrorRate(TabWcostmin,linecolor,strokewidth, opacity){		
+		//d3.select("svg2").append("p").text("la valeut de TabWcostmin[1]  est:  "+ TabWcostmin[1] +" et celle de estTabWcostmin[2]"+ TabWcostmin[2]);		
+		slopeW = -1*(TabWcostmin[1]/TabWcostmin[2]); 
+		lineoffsetW = -1*(TabWcostmin[0]/TabWcostmin[2]); 
+		//W et x y sont ici exprimes dans un repère centré sur l'origine
+		var tableau=[];
+		tableau = lineAdjustToSVG(slopeW,lineoffsetW);
+		var TabDataSet = [[tableau[2],tableau[3]], [tableau[4],tableau[5]],];
+		
+		var pathFunction = d3.svg.line()
+                          .x(function(d) { return (d[0]+200); })
+                          .y(function(d) { return (d[1]+200); });		  
+		
+
+		svg.append("path")
+			.attr("d", pathFunction(TabDataSet))
+            .attr("stroke", linecolor)
+			.attr("opacity", opacity)
+            .attr("stroke-width", strokewidth)
+            .attr("fill", "none");		
+	}
+	
+	
+	function drawperceptronline(W,linecolor,strokewidth, opacity){	
+		
+		//d3.select("svg2").append("p").text("la valeut de IT_int est:  "+ IT_int);		
+		//d3.select("svg2").append("p").text("la valeut de W[IT_int][1]  est:  "+ W_int[IT_int][1] +" et celle de est W[IT_int][2]"+ W_int[IT_int][2]);		
+		slopeW = -1*(W[IT][1]/W[IT][2]); 
+		lineoffsetW = -1*(W[IT][0]/W[IT][2]); 
+		//W et x y sont ici exprimes dans un repère centré sur l'origine
+		
+		var tableau=[];
+		tableau = lineAdjustToSVG(slopeW,lineoffsetW);		
+		var TabDataSet = [[tableau[2],tableau[3]], [tableau[4],tableau[5]],];
+		
+		var pathFunction = d3.svg.line()
+                          .x(function(d) { return (d[0]+200); })
+                          .y(function(d) { return (d[1]+200); })
+						  .interpolate("linear");	  		
+					 		
+		svg.append("path")
+			.attr("d", pathFunction(TabDataSet))
+            .attr("stroke", linecolor)
+			.attr("opacity", opacity)
+            .attr("stroke-width", strokewidth)
+            .attr("fill", "none");		  
+		
+	}
+	
+	function Create2DArray(rows) {
+		var arr = [];
+
+		for (var i=0;i<rows;i++) {
+			arr[i] = [];
+		}
+
+		return arr;
+	}
+	function Bruitage() {
+            
+			d3.select("svg2").append("p").attr("id","p_p3").text("Les points ont ete bruités, c'est sous cette forme qu'apparaissent les donnees dans les cas réels, nous ne disposons jamais de la valeur exacte");	
+			lineoffsetXY = 200*(1-slope) + lineoffset;
+			for (var i = 0; i < numPoints; i++) {
+				var plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+				epsilon = plusOrMinus * Math.floor(Math.random() * 60);
+				if((bubbleChart[i][0] + epsilon) < 200 && (bubbleChart[i][1] + epsilon) < 200){
+					Xn[i][0] = bubbleChart[i][0] + epsilon;
+					Xn[i][1] = bubbleChart[i][1] + epsilon;
+				}				
+			}
+	
+			
+			var tb2 = d3.selectAll("circle").data(Xn); // selection des cercles et lien avec le tableau de valeurs Xn
+			tb2.style("stroke", "black");
+			tb2.style("stroke-width", 1);
+			tb2.style("opacity",1);
+			tb2.attr("r", 2);
+			tb2.attr("cx", function(d) { return d[0] + 200; });
+			tb2.attr("cy", function(d) { return d[1] + 200; });
+
+			
+			d3.selectAll("#btn3").remove();				
+			Ok_pour_perceptron = "OK";
+			Wo_init();
+			d3.select("#p1").remove();	//suppression du texte "Preparation du jeu de donneés"
+			d3.select("svg2").append("h4").attr("id","p6").text("Phase d'apprentissage").style("font-size", "17px");
+		
+
+			if(Ok_pour_perceptron == "OK"){
+				
+				d3.select("#p1").remove();				
+				d3.select("svg2").append("p").attr("id","p_a1").text( "L'algorithme ne connais pas la droite qui a permi de construire le nuage de points, c'est ce qu'il doit trouver. Il ne connaît que l'emplacement des points (leurs coordonnées). Le taux d'erreur obtenu à chaque itération correspond à la moyenne des erreurs obtenues pour chaque point.");
+
+				
+				d3.select("svg2").append("p").attr("id","p_a5").text( "L'option - Regression Linéaire Automatique - lance l'apprentissage sans arrêt à chaque itération.");
+
+				
+				d3.select("svg12").append("button")
+					.attr("id","btn_perpIT")
+					.attr("value","Regression Lineaire pas a pas")
+					.text("Regression Lineaire pas a pas");
+
+					
+				d3.select("#btn_perpIT")
+					.on("click",function() {
+						if(this.value == "Regression Lineaire pas a pas") {
+							this.value = "Clicker pour iterer";
+							d3.select(this).text("Clicker pour iterer");
+							RL_Pasapas();
+						}
+						else {
+							RL_Pasapas();
+						}		
+					});
+				
+				d3.select("svg12").append("button")
+					.attr("id","btn_perpOS")
+					.style("margin-left","8px")					
+					.attr("value","Regression Lineaire Automatique")
+					.on("click", RL_Oneshot)
+					.text("Regression Lineaire Automatique");	
+
+				
+				}
+        }
+	function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+	function validation_droite() {
+			d3.select("svg12").append("button")
+			.text("Valider la séparation")
+			.attr("id","btn12")
+			.on("click", removebutton_bnt1);	
+			
+		}
+	function validation_point() {
+			d3.select("svg12").append("button")
+			.text("Valider les points")
+			.attr("id","btn22")
+			.on("click", removebutton_bnt2);
+		}
+	function removebutton_bnt1() {
+			d3.select("#btn1").remove();//on supprime le bouton change de droite
+			d3.select(this).remove();//on supprime le bouton de validation de la droite
+			d3.select("svg2").append("p").attr("id","p_p1").text("La droite choisie permettra de séparer les points en deux groupes distincts. ").style("font-family","Arial");	
+			Etat_droite = "valide";	
+			if(Etat_droite == "valide"){	
+				if(Etat_points == "valide"){
+					d3.select("svg1").append("button")
+						.attr("id","btn3")
+						.on("click", Bruitage)
+						.text("Bruiter les mesures");
+				}	
+			}				
+		}
+	function removebutton_bnt2() {
+			d3.select("#btn2").remove();//on supprime le bouton change de points
+			d3.select(this).remove();//on supprime le bouton de validation de points
+			d3.select("svg2").append("p").attr("id","p_p2").text( "Les points sont choisis au hasard, ils représentent les enregistrements connus qui vont servir à l'apprentissage du Perceptron. ");	
+			Etat_points = "valide";
+				
+			if(Etat_droite == "valide"){	
+				if(Etat_points == "valide"){
+					d3.select("svg1").append("button")
+						.attr("id","btn3")
+						.on("click", Bruitage)
+						.text("Bruiter les mesures");
+				}	
+			}
+		}	
+	var run_RegLin_Circles = function() {
+		d3.selectAll("circle").remove();
+		bubbleChart = [];
+		for (var i = 0; i < numPoints; i++) {
+			var plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+			x = plusOrMinus * Math.floor(Math.random() * 200);
+			y = slope * x + lineoffset 
+			bubbleChart.push([x, y]);
+		}	
+	
+		var tb = svg.selectAll("circle").data(bubbleChart);	   
+		tb.enter()
+			.append("circle")
+			.style("stroke", "black")
+			.style("fill", "black")
+			.style("opacity", 0.5)
+			.attr("r", 2)
+			.attr("cx", function(d) { return d[0] + 200; })
+			.attr("cy", function(d) { return d[1] + 200; });
+			       
+		tb.exit().remove();	 
+	};
+
+    //Draw a line
+	var runLine = function() {
+		d3.selectAll("path").remove();
+		slope = getRandomInt(-300,+300)/100; 
+		lineoffset = getRandomInt(-150,150);
+		var tableau=[];
+		tableau = lineAdjustToSVG(slope,lineoffset );
+		var datasetpoints2 = [[tableau[0],tableau[1]], [tableau[2],tableau[3]], [tableau[4],tableau[5]], [tableau[6],tableau[7]],];
+	
+		var area = d3.svg.area()
+			.x(function(d) { return d[0] + 200; })
+			.y0(0)
+			.y1(function(d) { return d[1] + 200; });
+			
+		svg.append("path")
+			.datum(datasetpoints2)
+			.attr("class", "area")
+			.attr("d", area)
+			.attr("fill", "red");
+
+	};	 
+	
+			
+			
+	function add(){   
+		
+		if (document.getElementById('nValue').value!='') 
+		{   			
+			numPoints  =document.getElementById('nValue').value;
+			d3.select("svg2").append("p").attr("id","p_p4").text("Nombre de points: "+numPoints);
+			d3.select("#nValue").remove();
+			d3.selectAll("label").remove();	
+			d3.select("#buttonChoixPoints").remove();
+			Xn = Create2DArray(numPoints);
+			
+			d3.select("svg1").append("button")
+				.attr("id","btn2")
+				.attr("value","Choisir les points")
+				.text("Choisir les points");
+			
+			d3.select("#btn2")
+			.on("click",function() {
+				if(this.value == "Choisir les points") {
+					this.value = "Changer les points";
+					d3.select(this).text("Changer les points");
+					run_RegLin_Circles();			
+					validation_point();		
+					d3.select("#pnumPoints").remove();
+					//d3.select("svg2").append("p").attr("id","p_p5").text("Nombre de points: "+numPoints);
+					
+				}
+				else {
+					run_RegLin_Circles();
+				}
+			});
+			
+		}
+	}
+	
+			
+	function add_abscisse(){   
+		if (document.getElementById('abscisse').value!='') { 
+			Point_x = document.getElementById('abscisse').value;											
+				blackpoint_abscisse = "OK";
+				drawblackpoint();				
+		}
+	}
+			
+	function add_ordonnée(){   
+		if (document.getElementById('ordonnée').value!='') { 
+		Point_y = document.getElementById('ordonnée').value;									
+				blackpoint_ordonnee = "OK";
+				drawblackpoint();				
+		}
+	}
+	
+	function drawblackpoint(){
+
+		if ((blackpoint_ordonnee == "OK")&&(blackpoint_abscisse=="OK")){
+			d3.selectAll("path").remove();
+			d3.select("#p_a5").remove();
+			d3.select("#p_p4").remove();
+			d3.selectAll("line").remove();
+			d3.selectAll("text").remove();
+			d3.select("#Badpointcircle").remove();
+			drawperceptronline_finalErrorRate(TabWcostmin,"orange",4, 5);
+			d3.select('#zone2').append("text").attr("id","p_t4").style("font-family","Arial").style("font-size","13px").text("Lorsque vous avez validé ");		
+			d3.select('#zone2').append("text").attr("id","p_t5").style("font-family","Arial").style("font-size","13px").style("font-weight","bold").text("les deux coordonnées");		
+			d3.select('#zone2').append("text").attr("id","p_t6").style("font-family","Arial").style("font-size","13px").text(", le point que vous avez choisi apparaît en noir sur le graphique. N'hésitez pas à faire plusieurs essais.");		
+
+			d3.selectAll("#blkpt").remove();
+			d3.selectAll("svg")
+				.append("circle")
+				.attr("id","blkpt")
+				.style("stroke", "black")
+				.style("fill", "gray")
+				.style("opacity", 1)
+				.attr("r", 5)
+				.attr("cx",Point_x)
+				.attr("cy",Point_y);
+			diagnostic();
+			blackpoint_abscisse = "KO";
+			blackpoint_ordonnee = "KO";
+			
+		}
+	}
+
+
+	function diagnostic(){
+	
+		var x_pt = Point_x - 200;
+		var y_pt = Point_y - 200;
+		if(y_pt> (x_pt*slopeW+lineoffsetW)){
+			var couleur_label = "rouge";
+			d3.selectAll("#p_final").remove();
+			d3.select("#zone2").append("p").attr("id","p_final").text("Le point de coordonnées x = "+Point_x+" et y = "+Point_y+" appartient au groupe "+ couleur_label+".").style("color","red");		
+		}
+		else{
+			var couleur_label = "bleu";
+			d3.selectAll("#p_final").remove();
+			d3.select("#zone2").append("p").attr("id","p_final").text("Le point de coordonnées x = "+Point_x+" et y = "+Point_y+" appartient au groupe "+ couleur_label+".").style("color", "blue");		
+		}
+		
+		
+		
+	}
+	
+	function Lancer_Perceptron(){
+		//d3.selectAll("p").remove();
+		d3.selectAll("path").remove();
+		d3.selectAll("path.area").remove();
+		d3.select("#p_fin1").remove();
+		d3.select("#p_fin2").remove();
+		d3.select("#p_a1").remove();
+		d3.select("#p_a2").remove();
+		d3.select("#p_a3").remove();
+		d3.select("#p_a4").remove();
+		d3.select("#p_a5").remove();
+		d3.select("#p_p0").remove();
+		d3.select("#p_p01").remove();
+		d3.select("#p_p02").remove();
+		d3.select("#p_p03").remove();		
+		d3.select("#p_p04").remove();
+		d3.select("#p_p1").remove();
+		d3.select("#p_p2").remove();
+		d3.select("#p_p3").remove();
+		d3.select("#p_p4").remove();
+		d3.select("#p_f1").remove();
+		d3.select("#p_f2").remove();
+		d3.select("#p_f3").remove();
+		d3.select("#p_f5").remove();
+		d3.select("#p_t4").remove();
+		d3.select("#p_t5").remove();
+		d3.select("#p_t6").remove();
+		d3.select("#p31").remove();
+		d3.select("#p32").remove();
+		d3.select("#p33").remove();
+		d3.select("#p34").remove();
+		d3.select("#p35").remove();
+		d3.selectAll("#p_final").remove();
+		d3.select("#p5").remove();
+		d3.selectAll("h4").remove();
+		d3.selectAll("g").remove();
+		d3.select("#costpath").remove();
+		d3.select("#Badpointcircle").remove();
+		d3.select("#nValue").remove();
+		d3.selectAll("label").remove();	
+		d3.selectAll("br").remove();	
+		d3.select("#buttonChoixPoints").remove();
+		d3.select("#buttonChoixAbscisse").remove();
+		d3.select("#buttonChoixOrdonnée").remove();				
+		d3.select("#abscisse").remove();
+		d3.select("#ordonnée").remove();
+	
+	
+		var node = document.createElement('div'); 
+		node.innerHTML = '<br /><label for="nValue" style="display: inline-block; width:225px; text-align: left; font-size: 13px; font-family: Arial; margin-left: 14px"> Choisir le nombre de points:    </label><input type="number" min="0" max="1000" step="10" value="50" id="nValue"><input value="valider" type="button"  onClick="add()" id="buttonChoixPoints">';	
+		document.getElementById('lancement').appendChild(node);
+	
+		//Reinitialiser toutes les variables globales
+		bubbleChart = [];	
+		Yn = [];		
+		P = [];		
+		slope = 0;
+		lineoffset = 0;
+		Etat_droite = "Choix_en_cours";
+		Etat_points = "Choix_en_cours";
+		valide = "valide";
+		test = 0;
+		Ok_pour_perceptron = "KO";
+		W = [[]];
+		W[0] =  [Math.random(), Math.random(), Math.random(),0];
+		slopeW = 0;
+		lineoffsetW = 0;
+		W[0] =  [0, 0, 0,0];
+		IT = 0;
+		Xb = 0;
+		Yb = 0;
+		Ynbad = 0;
+		Yn_w = [];
+		Wcost = 0;
+		Wcostmin = 1000;
+		var TabWcostmin = [];
+		tabl1=[];
+		paddingy = 30;
+		paddingx = 30;
+		hx = 300;
+		hy = 300;	
+		Decalage_right_courbeCout = 550;
+		formatAsPercentage = d3.format(".1%");
+		xScale = d3.scale.linear();
+		yScale = d3.scale.linear();
+		w = 500;
+		Costdataset = [];
+		MaxIT = 1000;
+		firsttime = "OK";
+		Point_x = 0;
+		Point_y = 0;
+		blackpoint_ordonnee = "KO";
+		blackpoint_abscisse  = "KO";
+		
+		d3.selectAll("svg").append("rect")
+			.style("fill", "Plum")
+			.attr("opacity", 0.4)
+			.attr("stroke", "black")
+			.attr("stroke-width", 1)
+			.attr("width", 400)
+			.attr("height", 400);
+
+		d3.select("svg1").append("button")
+				.attr("id","btn1")
+				.attr("value","Choisir une droite")
+				.text("Choisir une droite");
+						
+		d3.select("#btn1")
+			.on("click",function() {
+				if(this.value == "Choisir une droite") {
+					this.value = "Changer de droite";
+					d3.select(this).text("Changer de droite");
+					runLine();
+					validation_droite();	
+				}
+				else {
+					runLine();
+				}		
+		});
+	
+		d3.select("#btn2")
+			.on("click",function() {
+				if(this.value == "Points de mesure") {
+					this.value = "Changer les points";
+					d3.select(this).text("Changer les points");
+					run_RegLin_Circles();			
+					validation_point();		
+					d3.select("#pnumPoints").remove();					
+					
+				}
+				else {
+					run_RegLin_Circles();
+				}
+		});
+		d3.select("svg2").append("h4").attr("id","p6").text("Phase de préparation des données").style("font-size", "17px");		
+		d3.select("svg2").append("p").attr("id","p_p0").style("font-family","Arial").style("font-size","15px").text(" La regression linéaire est une fonction qui se construit à partir d'un historique de données connues. Par exemple si nous cherchons à évaluer le prix d'un logement, nous partirons de l'historique des prix de ventes et des caractéristiques des logements vendus.");	
+		d3.select("svg2").append("p").attr("id","p_p01").style("font-family","Arial").style("font-size","15px").text(" L'interface ci-dessous vous permet de créer vous même le jeu de données d'apprentissage. Les ventes sont symbolisés par des points affichés dans un espace à deux dimensions. Ici nous sommes dans un espace à deux dimensions il s'agit d'exprimer le prix de vente en fonction d'une seule variable comme la surface par exemple.");	
+		d3.select("svg2").append("p").attr("id","p_p02").style("font-family","Arial").style("font-size","15px").text(" Cette simplification permet de visualiser graphiquement le fonctionnement de l'algorithme, mais dans les cas réels les enregistrements sont identifiés par des milliers voire des centaines de milliers de caractéristiques, on parle d'espace de dimension N.");	
+	
+		d3.select("svg2").append("p").attr("id","p_p04").style("font-family","Arial").style("font-size","15px").text(" Avec l'exécution automatique de l'algorithme, choisir au maximum jusqu'à 4000 points, au delà le graphique commence à être trop chargé et moins lisible.");	
+
+		}
+
+	function Prédiction(){
+	
+		d3.select('#zone2').append("h4").text("Phase de prédiction").style("font-size", "17px");					
+		d3.select('#zone2').append("p").attr("id","p_f1").style("font-family","Arial").style("font-size","15px").text("Lorsque vous saisissez les coordonnées d'un nouveau point, le perceptron est capable d'identifier son groupe d'appartenance.");	
+		d3.select('#zone2').append("p").attr("id","p_f2").style("font-family","Arial").style("font-size","15px").text("L'axe des abscisses est de la gauche vers la droite sur le graphique.");	
+		d3.select('#zone2').append("p").attr("id","p_f3").style("font-family","Arial").style("font-size","15px").text("L'axe des ordonnées est du haut vers le bas sur le graphique.");
+			
+		var node2 = document.createElement('div'); 
+		node2.innerHTML = '<br /><label for="abscisse" style="display: inline-block; width:250px; text-align: left; font-size: 13px; font-family: Arial; margin-left: 14px">  Choisir une abscisse entre 0 et 400: </label><input type="number" min="0" max="400" step="10" value="50" id="abscisse"><input value="valider" type="button"  onClick="add_abscisse()" id="buttonChoixAbscisse">'+
+		'<br /><br /><label for="ordonnée" style="display: inline-block; width:250px; text-align: left; font-size: 13px; font-family: Arial; margin-left: 14px">  Choisir une ordonnée entre 0 et 400: </label><input type="number" min="0" max="400" step="10" value="50" id="ordonnée"><input value="valider" type="button"  onClick="add_ordonnée()" id="buttonChoixOrdonnée"><br /><br />';	
+		document.getElementById('zone2').appendChild(node2);
+		
+		d3.select('#zone2').append("text").attr("id","p_t4").style("font-family","Arial").style("font-size","15px").text("Lorsque vous avez validé ");		
+		d3.select('#zone2').append("text").attr("id","p_t5").style("font-family","Arial").style("font-size","15px").style("font-weight","bold").text("les deux coordonnées");		
+		d3.select('#zone2').append("text").attr("id","p_t6").style("font-family","Arial").style("font-size","15px").text(", le point que vous avez choisi apparaît en noir sur le graphique. N'hésitez pas à faire plusieurs essais.");		
+
+		
+		d3.select('#zone3').append("p").attr("id","p_f5").style("font-family","Arial").style("font-size","15px").text("Cet exercice peut sembler trivial en deux dimensions mais il faut savoir que dans les cas réels les points ont bien plus que deux ou trois coordonnées, les enregistrements peuvent avoir des milliers d'attributs. Or le Perceptron s'adapte très facilement aux espaces de dimension n, n pouvant être très grand. Le sous espace de séparation n'est alors plus une droite mais un hyperplan de dimension n-1. Ce qui n'est plus représentable pour l'homme mais n'est pas plus compliqué pour l'algorithme.");		
+	
+		d3.select('#zone3').append("h4").text("Les points forts et les points faibles du Perceptron").style("font-size", "17px");					
+		d3.select('#zone3').append("p").attr("id","p31").style("font-family","Arial").style("font-size","15px").text("Une première remarque valable pour tout algorithme d'apprentissage automatique: L'algorithme ne peut révéler une structure dans des données que s'il en existe une, cela suppose une organisation intrinsèque des données, ce qui n'est pas toujours le cas.");	
+		d3.select('#zone3').append("p").attr("id","p32").style("font-family","Arial").style("font-size","15px").text("Le perceptron a pour point fort sa simplicité, il permet d'identifier rapidement une organisation dans les données et peut s'implémenter par ajout de nouveaux enregistrements au fil de l'eau, sa performance s'améliorera alors au fur et à mesure de l'acquisition des données. On réalise bien sur le graphique qu'avec peu de points la séparation identifiée ne s'approche que grossièrement de la séparation réelle entre les points.");	
+		d3.select('#zone3').append("p").attr("id","p33").style("font-family","Arial").style("font-size","15px").text("Le perceptron a pour point faible sa simplicité aussi! Lorsque l'espace de séparation des données n'est pas linéaire (hyperplan), on utilisera des algorithmes plus sophistiqués qui sauront mieux épouser la forme des séparations entre les données.");
+		d3.select('#zone3').append("p").attr("id","p34").style("font-family","Arial").style("font-size","15px").text("Pour optimiser la solution dans l'espace de séparation des données, il existe des algorithmes plus sophistiqués comme le SVM (Machine à Vecteur de Support).");	
+		d3.select('#zone3').append("p").attr("id","p35").style("font-family","Arial").style("font-size","15px").text("Enfin, le Perceptron est un algorithme d'apprentissage supervisé, c'est à dire qu'il a besoin d'un historique de données labelisées pour apprendre. Ce qui n'est pas toujours facile à obtenir quand ce n'est pas impossible. Dans ce cas, il existe là aussi d'autres outils dits d'apprentissage non supervisés.");
+		}
+
+	
+	Lancer_Perceptron();
+		
+    </script>
+	
+</body>
+</html>
